@@ -1,0 +1,59 @@
+// bower:scss
+// endbower
+
+
+.md-dialog-container{
+  z-index: 9999;
+}
+
+.md-text-align-center{
+  text-align: center;
+}
+.md-text-align-left{
+  text-align: left;
+}
+.md-text-align-right{
+  text-align: right;
+}
+.md-text-align-justify{
+  text-align: justify;
+}
+.md-text-white-space-normal{
+  white-space: normal;
+}
+
+.md-media-xs{
+  height: 64px;
+  width: 64px;
+  max-height: 64px;
+  max-width: 64px;
+  img{
+    height: 100%;
+    width: 100%;
+    &.md-logo{
+      width: auto;
+      max-width: 100%;
+    }
+  }
+}
+
+.md-info{
+  padding: 10px;
+  box-shadow: 0 0 10px;
+  background: rgba(238, 238, 238, 0.7);
+}
+
+.md-list-buttons{
+  .md-button{
+    margin: 0 3px;
+  }
+}
+
+md-card{
+  &.md-accent{
+    background: rgb(255,173,255);
+  }
+  &.md-primary{
+    background: rgb(102,204,153);
+  }
+}

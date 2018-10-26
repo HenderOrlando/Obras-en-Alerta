@@ -1,0 +1,221 @@
+<md-dialog>
+  <md-toolbar>
+    <div
+        layout-align="space-between center"
+        class="md-toolbar-tools"
+    >
+      <h2>{{ entity.localidad.nombre }}</h2>
+
+      <md-button
+          class="md-raised md-warn"
+          ng-click="entity.cancel()"
+      >
+        Volver
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dilog-content
+      layout-margin
+      layout-padding
+      class="md-text-align-center"
+  >
+    <div
+        class="md-display-3"
+    >
+      Alcaldía Local de {{ entity.localidad.nombre }}
+    </div>
+    <div
+        class="md-display-1 md-text-align-left"
+    >
+      Variables
+    </div>
+    <div
+        layout="row"
+        class="md-list-buttons"
+    >
+      <md-button
+          class="md-text-white-space-normal md-raised"
+      >
+        <div
+            layout="column"
+            layout-gt-sm="row"
+            layout-align="center center"
+        >
+          <div class="md-media-xs">
+            <img src="images/recurso-1.png" />
+          </div>
+          <span>
+            Total de Contratos
+          </span>
+        </div>
+      </md-button>
+      <md-button
+          class="md-text-white-space-normal md-raised"
+      >
+        <div
+            layout="column"
+            layout-gt-sm="row"
+            layout-align="center center"
+        >
+          <div class="md-media-xs">
+            <img src="images/alerta.png" />
+          </div>
+          <span>
+            Integralidad de la Información
+          </span>
+        </div>
+      </md-button>
+      <md-button
+          class="md-text-white-space-normal md-raised"
+      >
+        <div
+            layout="column"
+            layout-gt-sm="row"
+            layout-align="center center"
+        >
+          <!--<div class="md-media-xs">
+            <img src="images/recurso-1.png" />
+          </div>-->
+          <span>
+            Tipo de Proceso
+          </span>
+        </div>
+      </md-button>
+      <md-button
+          class="md-text-white-space-normal md-raised"
+      >
+        <div
+            layout="column"
+            layout-gt-sm="row"
+            layout-align="center center"
+        >
+          <!--<div class="md-media-xs">
+            <img src="images/recurso-1.png" />
+          </div>-->
+          <span>
+            Contratos Adjudicados único contratista
+          </span>
+        </div>
+      </md-button>
+      <md-button
+          class="md-text-white-space-normal md-raised"
+      >
+        <div
+            layout="column"
+            layout-gt-sm="row"
+            layout-align="center center"
+        >
+          <!--<div class="md-media-xs">
+            <img src="images/recurso-1.png" />
+          </div>-->
+          <span>
+            Número de oferentes
+          </span>
+        </div>
+      </md-button>
+      <md-button
+          class="md-text-white-space-normal md-raised"
+      >
+        <div
+            layout="column"
+            layout-gt-sm="row"
+            layout-align="center center"
+        >
+          <!--<div class="md-media-xs">
+            <img src="images/recurso-1.png" />
+          </div>-->
+          <span>
+            Montos Sospechosos
+          </span>
+        </div>
+      </md-button>
+    </div>
+    <div
+        layout="row"
+        layout-wrap
+    >
+      <md-card
+          flex="25%"
+      >
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-title">Total de Contratos</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content
+            layout="row"
+            layout-align="center center"
+        >
+          <div
+              class="md-display-2"
+          >
+            58
+          </div>
+        </md-card-content>
+      </md-card>
+      <md-card
+          flex="25%"
+          class="md-primary"
+      >
+        <md-card-title>
+          <md-card-title-text
+              class="md-text-align-left"
+          >
+            <span class="md-caption">Haga click sobre el ícono para ver contratos</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content
+            layout="row"
+            layout-align="center center"
+        >
+          <md-card-title-media>
+            <div class="md-media-lg card-media">
+              <img src="images/secop-1_normal.png" />
+            </div>
+          </md-card-title-media>
+          <div
+              class="md-display-2"
+          >
+            18
+          </div>
+        </md-card-content>
+      </md-card>
+      <md-card
+          flex="25%"
+          class="md-accent"
+      >
+        <md-card-title>
+          <md-card-title-text
+              class="md-text-align-left"
+          >
+            <span class="md-caption">Haga click sobre el ícono para ver contratos</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content
+            layout="row"
+            layout-align="center center"
+        >
+          <md-card-title-media>
+            <div class="md-media-lg card-media">
+              <img src="images/secop-2_normal.png" />
+            </div>
+          </md-card-title-media>
+          <div
+              class="md-display-2"
+          >
+            30
+          </div>
+        </md-card-content>
+      </md-card>
+      <md-card
+          flex="25%"
+      >
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-title">MEDIA o MEDIANA Más del 50% de la contratación está generada</span>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+    </div>
+  </md-dilog-content>
+</md-dialog>
