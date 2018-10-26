@@ -26,13 +26,20 @@
       info = null
     ;
     
-    Secop.I(bogota);
+    angular.forEach(bogota, function(localidades){
+      angular.forEach(localidades, function(val){
+        console.log(val)
+        if(val && val.type){
+          Secop.I(('BOGOTÁ D.C. - ALCALDÍA LOCAL ' + val.properties.NOMBRE).toUpperCase(), 2016);
+        }
+      });
+    });
     
     leafletData
       .getMap('map-bogota')
       .then(function (map_) {
         map = map_;
-        console.log(map)
+        //console.log(map)
       
         /*L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
           maxZoom: 11,
@@ -109,19 +116,43 @@
         return this._div;
       };
       info.update = function (props) {
-        //console.log(props)
-        this._div.innerHTML = props ? '' +
+        var este = this;
+        if(props){
+          if(!props.Contratos){
+            Secop
+              //.I(('BOGOTÁ D.C. - ALCALDÍA LOCAL ' + props.NOMBRE).toUpperCase(), bogota)
+              .I(('BOGOTÁ D.C. - ALCALDÍA LOCAL ' + props.NOMBRE).toUpperCase(), 2016)
+              .then(function(data){
+                //console.log(data)
+                props.Contratos = data.total;
+                //bogota.features[11].properties.Contratos = 317200;
+                return data[0];
+              })
+              .then(function(data){
+                updateInfo(este, props);
+              })
+              ;
+          }else{
+            updateInfo(este, props);
+          }
+        }
+      };
+      info.addTo(map);
+      
+      function updateInfo(este, props){
+        este._div.innerHTML = props ? '' +
           '<div class="md-media-xs">' +
           '  <img class="md-logo" src="images/logo.png"/>' +
           '</div>' +
           '<div class="md-title">' +
           '  <h4>Alcaldía Local de<br>' + props.NOMBRE + '</h4>' +
-          '  <b>' + props.NOMBRE + '</b><br />' + props.Contratos + ' people / mt<sup>2</sup>' +
+          //'  <b>' + props.NOMBRE + '</b><br />' + props.Contratos + ' people / mt<sup>2</sup>' +
+          props.Contratos + ' contratos' +
           '</div>' +
           ''
-          : 'Visita cada localdiad para ver la contración en Obras Publicas';
-      };
-      info.addTo(map);
+          : 'Visita cada localdiad para ver la contración en Obras Publicas'
+        ;
+      }
     }
     
     function addMapLocalidadesBogota(map){
